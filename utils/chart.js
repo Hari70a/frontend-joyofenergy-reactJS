@@ -2,19 +2,19 @@ import * as chartJs from "chart.js";
 
 let chart;
 
-export const formatDateLabel = (timestamp) => {
+export const formatDateLabel = (timestamp, identifier, position) => {
   const date = new Date(timestamp);
   const month = date.getMonth();
   const day = date.getDate();
-
+  
   const formatPart = (value) => {
     return value < 10 ? `0${value}` : `${value}`;
   };
 
-  return `${formatPart(day)}/${formatPart(month + 1)}`;
+  return identifier === "LAST-24-HOURS" ? `${formatPart(position)}` : `${formatPart(day)}/${formatPart(month + 1)}`;
 };
 
-export const renderChart = (containerId, readings) => {
+export const renderChart = (containerId, readings, identifier) => {
   chartJs.Chart.defaults.font.size = "10px";
 
   chartJs.Chart.register.apply(
@@ -22,7 +22,7 @@ export const renderChart = (containerId, readings) => {
     Object.values(chartJs).filter((chartClass) => chartClass.id)
   );
 
-  const labels = readings.map(({ time }) => formatDateLabel(time));
+  const labels = readings.map(({ time }, index) => formatDateLabel(time, identifier, index));
   const values = readings.map(({ value }) => value);
 
   const data = {

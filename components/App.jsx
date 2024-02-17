@@ -16,7 +16,7 @@ export const App = () => {
   }
 
   return (
-    <div className="background shadow-2 flex overflow-hidden">
+    <div className="background shadow-2 flex-arrangement overflow-hidden">
       <aside className="p3 menuWidth overflow-auto">
         <Sidebar />
       </aside>

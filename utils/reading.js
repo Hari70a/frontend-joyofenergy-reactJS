@@ -31,3 +31,17 @@ export const sortByTime = (readings) => {
     (readingA, readingB) => readingA.time - readingB.time
   );
 };
+
+
+export const accumulateSum = (readings, initialValue) => {
+  return readings.reduce(((acc, cur) => acc + cur.value),initialValue);
+};
+
+
+export const accumulateConsumption = (readings) => {
+  return Math.round(accumulateSum(readings, 0))
+}
+
+export const accumulateCost = (readings) => {
+  return accumulateSum(readings)
+}

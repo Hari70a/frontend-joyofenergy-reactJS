@@ -36,7 +36,9 @@
   "dependencies": {
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
+    "basscss": "^8.1.0",
     "chart.js": "^3.2.1",
+    "classnames": "^2.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }

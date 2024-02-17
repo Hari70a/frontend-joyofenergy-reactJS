@@ -75,10 +75,6 @@ html {
   background: linear-gradient(0deg, rgb(73, 158, 71) 0%, rgb(94, 212, 92) 100%);
 }
 
-.white {
-  color: white;
-}
-
 .darkgray {
   color: rgb(109, 109, 109);
 }
@@ -102,3 +98,55 @@ html {
 .border-grey {
   border: 1px solid rgb(225, 225, 225);
 }
+
+.light-blue {
+  color: rgb(109, 142, 207)
+}
+
+.bg-dark-blue {
+  background: rgb(55, 118, 240);
+}
+
+.rounded-sm {
+  border-radius: 0.4rem;
+}
+
+.bg-light-grey:hover {
+  background: rgb(55, 118, 240);
+  cursor: pointer;
+}
+
+.light-blue:hover{
+  color: white
+}
+
+.dark-blue {
+  color: rgb(55, 118, 240);
+}
+
+.white {
+  color: white;
+}
+
+.grid-arrangement {
+  display: grid;
+  grid-template-columns: repeat(3, minMax(0, 1fr));
+  gap: 0 2rem;
+}
+
+.flex-arrangement {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 64em){
+  .flex-arrangement{ flex-direction: row; }
+}
+
+@media (width < 64em){
+  .grid-arrangement { 
+    grid-template-columns: repeat(1, minMax(0, 1fr));
+    gap: 2rem 0;
+  }
+}
+
